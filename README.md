@@ -1,2 +1,2 @@
 # All-Sorting-View
-All 10 most popular sorting algorithms vizualizer.
+Vizualizer for all 10 most popular sorting algorithms.
