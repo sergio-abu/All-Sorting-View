@@ -3,6 +3,14 @@ import random
 import math
 import SelectionSort
 import InsertionSort
+import MergeSort
+import Quicksort
+import CountingSort
+import RadixSort
+import BucketSort
+import RadixSort
+import HeapSort
+import ShellSort
 
 pygame.init()
 
