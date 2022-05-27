@@ -41,8 +41,8 @@ def merge_sort(lst, draw_info, ascending=True):
         M = lst[r:]
 
         # Sort the two halves
-        merge_sort(L, draw_info)
-        merge_sort(M, draw_info)
+        merge_sort(L, draw_info, ascending)
+        merge_sort(M, draw_info, ascending)
 
         i = j = k = 0
 
@@ -60,6 +60,7 @@ def merge_sort(lst, draw_info, ascending=True):
                 draw_list(draw_info, {k - 1: draw_info.BLUE, j: draw_info.RED}, True)
                 yield True
             k += 1
+            yield True
 
         # When we run out of elements in either L or M,
         # pick up the remaining elements and put in A[p..r]
@@ -78,15 +79,15 @@ def merge_sort(lst, draw_info, ascending=True):
             yield True
 
     # DESCENDING
-    elif not ascending:
+    if not ascending:
         #  r is the point where the array is divided into two subarrays
         r = len(lst) // 2
         L = lst[:r]
         M = lst[r:]
 
         # Sort the two halves
-        merge_sort(draw_info, False, L)
-        merge_sort(draw_info, False, M)
+        merge_sort(L, draw_info, ascending)
+        merge_sort(M, draw_info, ascending)
 
         i = j = k = 0
 
@@ -96,9 +97,11 @@ def merge_sort(lst, draw_info, ascending=True):
             if L[i] < M[j]:
                 lst[k] = L[i]
                 i += 1
+                draw_list(draw_info, {k - 1: draw_info.BLUE, i: draw_info.RED}, True)
             else:
                 lst[k] = M[j]
                 j += 1
+                draw_list(draw_info, {k - 1: draw_info.BLUE, j: draw_info.RED}, True)
             k += 1
 
         # When we run out of elements in either L or M,
@@ -107,8 +110,10 @@ def merge_sort(lst, draw_info, ascending=True):
             lst[k] = L[i]
             i += 1
             k += 1
+            draw_list(draw_info, {k - 1: draw_info.BLUE, i: draw_info.RED}, True)
 
         while j < len(M):
             lst[k] = M[j]
             j += 1
             k += 1
+            draw_list(draw_info, {k - 1: draw_info.BLUE, j: draw_info.RED}, True)

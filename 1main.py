@@ -257,16 +257,16 @@ def main():
                 sorting_algorithm = InsertionSort.insertion_sort
                 sorting_algo_name = "Counting Sort"
             elif event.key == pygame.K_7 and not sorting:
-                sorting_algorithm = InsertionSort.insertion_sort
+                sorting_algorithm = RadixSort.radix_sort
                 sorting_algo_name = "Radix Sort"
             elif event.key == pygame.K_8 and not sorting:
                 sorting_algorithm = InsertionSort.insertion_sort
                 sorting_algo_name = "Bucket Sort"
             elif event.key == pygame.K_9 and not sorting:
-                sorting_algorithm = InsertionSort.insertion_sort
+                sorting_algorithm = HeapSort.heap_sort
                 sorting_algo_name = "Heap Sort"
             elif event.key == pygame.K_0 and not sorting:
-                sorting_algorithm = InsertionSort.insertion_sort
+                sorting_algorithm = ShellSort.shell_sort
                 sorting_algo_name = "Shell Sort"
 
     pygame.quit()
