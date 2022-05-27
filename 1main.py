@@ -8,7 +8,6 @@ import Quicksort
 import CountingSort
 import RadixSort
 import BucketSort
-import RadixSort
 import HeapSort
 import ShellSort
 
@@ -257,7 +256,7 @@ def main():
                 sorting_algorithm = InsertionSort.insertion_sort
                 sorting_algo_name = "Counting Sort"
             elif event.key == pygame.K_7 and not sorting:
-                sorting_algorithm = RadixSort.radix_sort
+                sorting_algorithm = InsertionSort.insertion_sort
                 sorting_algo_name = "Radix Sort"
             elif event.key == pygame.K_8 and not sorting:
                 sorting_algorithm = InsertionSort.insertion_sort
